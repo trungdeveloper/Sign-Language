@@ -33,6 +33,8 @@ public class BasicTabFragment extends Fragment {
                 showAlphabetActivity();
             }
         });
+
+
         return rootView;
     }
     public void showAlphabetActivity (){

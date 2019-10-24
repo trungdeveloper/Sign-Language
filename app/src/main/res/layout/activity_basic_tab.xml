@@ -5,33 +5,17 @@
     android:orientation="vertical"
     android:gravity="center_horizontal">
 
-   <LinearLayout
+   <ImageView
        android:layout_width="match_parent"
        android:layout_height="wrap_content">
 
-       <ImageView
-           android:id="@+id/alphabet"
-           android:layout_width="0dp"
-           android:layout_weight="1"
-           android:layout_height="200dp"
-           android:background="@drawable/alphabet"
-           android:layout_margin="20dp"
-           />
-       <ImageView
-           android:id="@+id/number"
-           android:layout_width="0dp"
-           android:layout_weight="1"
-           android:layout_height="200dp"
-           android:background="@drawable/number"
-           android:layout_margin="20dp"/>
+   </ImageView>
 
-   </LinearLayout>
-    <ImageView
-        android:id="@+id/favorites"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:layout_margin="20dp"
-        android:background="@drawable/favorites"/>
+   <androidx.recyclerview.widget.RecyclerView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/ItemBasic"
+       android:background="#EEEEEE"/>
 
 
 

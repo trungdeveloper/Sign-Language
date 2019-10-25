@@ -13,11 +13,20 @@
         android:layout_height="wrap_content"
         app:tabMode="fixed"
         app:tabTextColor="@android:color/white"
-        android:background="#04B4AE"/>
+        app:tabIndicatorColor="@android:color/white"
+        android:background="#00C0FF"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#00C0FF">
+    </ImageView>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="-100dp">
+
+    </androidx.viewpager.widget.ViewPager>
 
 </LinearLayout>

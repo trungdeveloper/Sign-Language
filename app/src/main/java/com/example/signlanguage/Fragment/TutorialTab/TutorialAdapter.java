@@ -1,28 +1,26 @@
-package com.example.signlanguage.Fragment.BasicTab;
+package com.example.signlanguage.Fragment.TutorialTab;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.signlanguage.R;
 import com.example.signlanguage.VolleyApi;
 import com.example.signlanguage.model.Tab;
 
-import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class BasicAdapter extends RecyclerView.Adapter<BasicAdapter.BasicViewHolder> {
+public class TutorialAdapter extends RecyclerView.Adapter<TutorialAdapter.TutorialViewHolder> {
     public List<Tab> TabsItem = new ArrayList<>();
     private OnItemClicked onClick;
 
-    public BasicAdapter(VolleyApi.OnTabResponse onTabResponse, List<Tab> tabs) {
+    public TutorialAdapter(VolleyApi.OnTabResponse onTabResponse, List<Tab> tabs) {
         this.TabsItem = tabs;
     }
 
@@ -34,13 +32,13 @@ public class BasicAdapter extends RecyclerView.Adapter<BasicAdapter.BasicViewHol
 
     @NonNull
     @Override
-    public BasicViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public TutorialViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_item_tab, parent, false);
-        return new BasicViewHolder(view);
+        return new TutorialViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BasicViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull TutorialViewHolder holder, final int position) {
         holder.tvView.setText(TabsItem.get(position).getName());
         holder.ImageItemTab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,12 +62,12 @@ public class BasicAdapter extends RecyclerView.Adapter<BasicAdapter.BasicViewHol
 
     }
 
-    class BasicViewHolder extends RecyclerView.ViewHolder {
+    class TutorialViewHolder extends RecyclerView.ViewHolder {
         TextView tvView;
         ImageView ImageItemTab;
 
 
-        public BasicViewHolder(@NonNull View itemView) {
+        public TutorialViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvView = itemView.findViewById(R.id.textView);
@@ -82,5 +80,6 @@ public class BasicAdapter extends RecyclerView.Adapter<BasicAdapter.BasicViewHol
         this.onClick = onClick;
     }
 
-
+    public class BasicTabDetailViewHolder {
+    }
 }

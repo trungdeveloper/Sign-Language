@@ -1,4 +1,4 @@
-package com.example.signlanguage.Fragment.BasicTab;
+package com.example.signlanguage.Fragment.TutorialTab;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,23 +13,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.signlanguage.R;
 import com.example.signlanguage.Screens.TabDetail.Tab_Detail_Activity;
-import com.example.signlanguage.model.Tab;
 import com.example.signlanguage.VolleyApi;
+import com.example.signlanguage.model.Tab;
 
 import java.util.List;
 
-public class BasicTabFragment extends Fragment implements BasicAdapter.OnItemClicked {
+public class TutorialTabFragment extends Fragment  implements TutorialAdapter.OnItemClicked {
     private View rootView;
     RecyclerView recyclerViewTab;
-    BasicAdapter basicAdapter;
-
+    TutorialAdapter tutorialAdapter;
 
     @NonNull
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.activity_basic_tab, container, false);
+        rootView = inflater.inflate(R.layout.activity_tutotials_tab, container, false);
 
-        recyclerViewTab = rootView.findViewById(R.id.ItemBasic);
+        recyclerViewTab = rootView.findViewById(R.id.ItemTutorial);
         recyclerViewTab.setLayoutManager(new GridLayoutManager(getActivity(),2));
         return rootView;
     }
@@ -42,16 +41,17 @@ public class BasicTabFragment extends Fragment implements BasicAdapter.OnItemCli
 
     private void getItemTab(){
         VolleyApi volley =new VolleyApi(getContext());
-        String urlJsonArryCategoty = "http://signlanguage.somee.com/api/categories/6dda6249-80a9-444b-baae-b1d4c61719b7";
+        String urlJsonArryCategoty = "http://signlanguage.somee.com/api/categories/2d897d69-4bac-455a-b96f-2851b6d91142";
 
         volley.makeObjectArrayRequest(urlJsonArryCategoty, new VolleyApi.OnTabResponse() {
             @Override
             public void onResponse(List<Tab> tabs) {
-                basicAdapter = new BasicAdapter(this, tabs);
-                recyclerViewTab.setAdapter(basicAdapter);
-                basicAdapter.setOnClick(BasicTabFragment.this);
-
+                tutorialAdapter = new TutorialAdapter(this, tabs);
+                recyclerViewTab.setAdapter(tutorialAdapter);
+                tutorialAdapter.setOnClick(TutorialTabFragment.this);
             }
+
+
         });
     }
 
@@ -60,4 +60,5 @@ public class BasicTabFragment extends Fragment implements BasicAdapter.OnItemCli
         Intent intent = new Intent(getActivity(), Tab_Detail_Activity.class);
         startActivity(intent);
     }
+
 }

@@ -1,4 +1,4 @@
-package com.example.signlanguage.Screens.BasicTab;
+package com.example.signlanguage.Screens.TabDetail;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,11 +17,11 @@ import com.example.signlanguage.model.Tab;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BasicDetailAdapter extends RecyclerView.Adapter<BasicDetailAdapter.BasicTabDetailViewHolder> {
+public class TABDetailAdapter extends RecyclerView.Adapter<TABDetailAdapter.BasicTabDetailViewHolder> {
     public List<Tab> TabsItem = new ArrayList<>();
     private BasicAdapter.OnItemClicked onClick;
 
-    public BasicDetailAdapter(Basic_Tab_Activity basic_tab_activity) {
+    public TABDetailAdapter(Tab_Detail_Activity basic_tab_activity) {
     }
 
 
@@ -33,7 +33,7 @@ public class BasicDetailAdapter extends RecyclerView.Adapter<BasicDetailAdapter.
     @NonNull
     @Override
     public BasicTabDetailViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_basic_tab_detail_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_tab_detail_item, parent, false);
         return new BasicTabDetailViewHolder(view);
     }
 
@@ -47,7 +47,7 @@ public class BasicDetailAdapter extends RecyclerView.Adapter<BasicDetailAdapter.
 
     @Override
     public int getItemCount() {
-            return 5;
+            return 10;
     }
 
     class BasicTabDetailViewHolder extends RecyclerView.ViewHolder {

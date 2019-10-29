@@ -2,6 +2,7 @@ package com.example.signlanguage.Fragment.TutorialTab;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.signlanguage.R;
-import com.example.signlanguage.Screens.TabDetail.Tab_Detail_Activity;
+import com.example.signlanguage.Screens.TabDetail.TabDetailActivity;
 import com.example.signlanguage.VolleyApi;
 import com.example.signlanguage.model.Tab;
 
@@ -41,7 +42,7 @@ public class TutorialTabFragment extends Fragment  implements TutorialAdapter.On
 
     private void getItemTab(){
         VolleyApi volley =new VolleyApi(getContext());
-        String urlJsonArryCategoty = "http://signlanguage.somee.com/api/categories/2d897d69-4bac-455a-b96f-2851b6d91142";
+        String urlJsonArryCategoty = "http://signlanguage.somee.com/api/categories/acc4bb3a-3fa0-4207-bc69-5c1d36646c6f";
 
         volley.makeObjectArrayRequest(urlJsonArryCategoty, new VolleyApi.OnTabResponse() {
             @Override
@@ -50,14 +51,13 @@ public class TutorialTabFragment extends Fragment  implements TutorialAdapter.On
                 recyclerViewTab.setAdapter(tutorialAdapter);
                 tutorialAdapter.setOnClick(TutorialTabFragment.this);
             }
-
-
         });
     }
 
     @Override
     public void onClickDetailTab(int position) {
-        Intent intent = new Intent(getActivity(), Tab_Detail_Activity.class);
+        Intent intent = new Intent(getActivity(), TabDetailActivity.class);
+        intent.putExtra("subCategory_ID",tutorialAdapter.TabsItem.get(position).getId());
         startActivity(intent);
     }
 

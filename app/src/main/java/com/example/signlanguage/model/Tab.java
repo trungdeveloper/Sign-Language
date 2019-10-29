@@ -1,6 +1,6 @@
 package com.example.signlanguage.model;
 
-public class Tab  {
+public class Tab {
     private String id;
     private String name;
     private String image;
@@ -14,7 +14,13 @@ public class Tab  {
     public String getName() {
         return name;
     }
+
     public String getImage() {
         return image;
     }
+
+    public String getId() {
+        return id;
+    }
+
 }

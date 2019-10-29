@@ -12,18 +12,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.signlanguage.Fragment.BasicTab.BasicAdapter;
 import com.example.signlanguage.R;
 
+import com.example.signlanguage.VolleyApi;
+import com.example.signlanguage.model.Subcategory;
 import com.example.signlanguage.model.Tab;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TABDetailAdapter extends RecyclerView.Adapter<TABDetailAdapter.BasicTabDetailViewHolder> {
-    public List<Tab> TabsItem = new ArrayList<>();
-    private BasicAdapter.OnItemClicked onClick;
+public class TabDetailAdapter extends RecyclerView.Adapter<TabDetailAdapter.BasicTabDetailViewHolder> {
+    public List<Subcategory> SubCategoryItem = new ArrayList<>();
+    private OnItemClicked onClick;
 
-    public TABDetailAdapter(Tab_Detail_Activity basic_tab_activity) {
+
+    public TabDetailAdapter(VolleyApi.OnSubCategoryResponse onSubResponse,List<Subcategory> subCategoryItem) {
+        SubCategoryItem = subCategoryItem;
     }
-
 
     public interface OnItemClicked {
         void onClickDetailTab(int position);
@@ -38,16 +41,26 @@ public class TABDetailAdapter extends RecyclerView.Adapter<TABDetailAdapter.Basi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BasicTabDetailViewHolder holder, int position) {
-        holder.nameItem.setText("A");
+    public void onBindViewHolder(@NonNull BasicTabDetailViewHolder holder, final int position) {
+        holder.nameItem.setText(SubCategoryItem.get(position).getKeyword());
+
+        holder.nameItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClick.onClickDetailTab(position);
+            }
+        });
     }
-
-
 
 
     @Override
     public int getItemCount() {
-            return 10;
+        if(SubCategoryItem == null){
+            return 0;
+        }else {
+            return SubCategoryItem.size();
+        }
+
     }
 
     class BasicTabDetailViewHolder extends RecyclerView.ViewHolder {
@@ -59,7 +72,7 @@ public class TABDetailAdapter extends RecyclerView.Adapter<TABDetailAdapter.Basi
         }
     }
 
-    public void setOnClick(BasicAdapter.OnItemClicked onClick) {
+    public void setOnClick(TabDetailAdapter.OnItemClicked onClick) {
         this.onClick = onClick;
     }
 }

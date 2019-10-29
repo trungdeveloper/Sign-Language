@@ -6,9 +6,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.signlanguage.Fragment.BasicTabFragment;
-import com.example.signlanguage.Fragment.DictionaryTabFragment;
-import com.example.signlanguage.Fragment.TutorialTabFragment;
+import com.example.signlanguage.Fragment.BasicTab.BasicTabFragment;
+import com.example.signlanguage.Fragment.DictionaryTab.DictionaryTabFragment;
+import com.example.signlanguage.Fragment.TutorialTab.TutorialTabFragment;
 
 public class PageAdapter extends FragmentPagerAdapter {
     private Context myContext;

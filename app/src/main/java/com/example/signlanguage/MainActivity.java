@@ -30,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Cơ Bản"));
         tabLayout.addTab(tabLayout.newTab().setText("Hướng Dẫn"));
         tabLayout.addTab(tabLayout.newTab().setText("Từ Điển"));
+
+        tabLayout.getTabAt(0).setIcon(R.drawable.box);
+        tabLayout.getTabAt(1).setIcon(R.drawable.tutorial);
+        tabLayout.getTabAt(2).setIcon(R.drawable.languages);
+
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final PageAdapter adapter = new PageAdapter(this, getSupportFragmentManager(), tabLayout.getTabCount());

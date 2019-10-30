@@ -32,13 +32,8 @@ public class BasicTabFragment extends Fragment implements BasicAdapter.OnItemCli
 
         recyclerViewTab = rootView.findViewById(R.id.ItemBasic);
         recyclerViewTab.setLayoutManager(new GridLayoutManager(getActivity(),2));
-        return rootView;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
         getItemTab();
+        return rootView;
     }
 
     private void getItemTab(){

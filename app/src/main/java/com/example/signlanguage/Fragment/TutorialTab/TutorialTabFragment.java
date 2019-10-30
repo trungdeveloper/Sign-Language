@@ -31,13 +31,8 @@ public class TutorialTabFragment extends Fragment  implements TutorialAdapter.On
 
         recyclerViewTab = rootView.findViewById(R.id.ItemTutorial);
         recyclerViewTab.setLayoutManager(new GridLayoutManager(getActivity(),2));
-        return rootView;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
         getItemTab();
+        return rootView;
     }
 
     private void getItemTab(){

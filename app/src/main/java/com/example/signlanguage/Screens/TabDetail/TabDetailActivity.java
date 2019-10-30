@@ -32,25 +32,20 @@ public class TabDetailActivity extends AppCompatActivity implements TabDetailAda
 
         rcViewDetail = findViewById(R.id.recyclerViewBasicTabDetail);
         rcViewDetail.setLayoutManager(new LinearLayoutManager(this));
-
-    }
-
-    protected void onResume() {
-        super.onResume();
         getData();
-
     }
 
     private void getData(){
         VolleyApi volley =new VolleyApi(TabDetailActivity.this);
         String subCategory_ID = getIntent().getStringExtra("subCategory_ID");
         String url = "http://signlanguage.somee.com/api/subcategories/"+subCategory_ID;
+        String[] arrUrl = {url};
 
-        volley.getSubcategoryData(url, new VolleyApi.OnSubCategoryResponse() {
+        volley.getSubcategoryData(arrUrl, new VolleyApi.OnSubCategoryResponse() {
             @Override
             public void OnSubCategoryResponse(List<Subcategory> subcategories) {
                 Collections.sort(subcategories, new NameComparator());
-                tabDetailAdapterAdapter = new TabDetailAdapter(this, subcategories);
+                tabDetailAdapterAdapter = new TabDetailAdapter(this, subcategories, TabDetailActivity.this);
                 rcViewDetail.setAdapter(tabDetailAdapterAdapter);
                tabDetailAdapterAdapter.setOnClick(TabDetailActivity.this);
             }

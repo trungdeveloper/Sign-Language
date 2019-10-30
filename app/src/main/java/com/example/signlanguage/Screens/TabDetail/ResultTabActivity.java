@@ -26,7 +26,6 @@ public class ResultTabActivity extends AppCompatActivity {
         video = findViewById(R.id.video);
         progressDialog = new ProgressDialog(ResultTabActivity.this);
         getItemResult();
-
     }
 
     private void getItemResult() {
@@ -35,24 +34,18 @@ public class ResultTabActivity extends AppCompatActivity {
         String url = getIntent().getStringExtra("video");
         String keyword = getIntent().getStringExtra("keyword");
         tvKeyword.setText(keyword);
-
         progressDialog.setMessage("Loading video...");
         progressDialog.show();
-
         video.setVideoURI(Uri.parse(url));
-
         MediaController mediaController = new MediaController(this);
         video.setMediaController(mediaController);
         mediaController.setAnchorView(video);
         video.start();
-
         video.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 progressDialog.dismiss();
             }
         });
-
-
     }
 }

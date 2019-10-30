@@ -52,7 +52,7 @@ public class DictionaryTabFragment extends Fragment implements DictionaryAdapter
             }
         });*/
 
-        final String[] arrUrl = new String[0];
+        final String[] arrUrl = new String[8];
 
         String urlSubcategory = "http://signlanguage.somee.com/api/categories/9ab5b53e-ca09-4145-898c-dabb73eb50af";
         final String startUrl ="http://signlanguage.somee.com/api/subcategories/";
@@ -60,8 +60,7 @@ public class DictionaryTabFragment extends Fragment implements DictionaryAdapter
             @Override
             public void onResponse(List<Tab> tabs) {
                 for(int i =0; i<tabs.size(); i++){
-                    arrUrl[i] = (startUrl+tabs.get(i).getId());
-
+                    arrUrl[i] = startUrl+tabs.get(i).getId();
                 }
                 Log.d("1", arrUrl[1]);
                 volley.getSubcategoryData(arrUrl, new VolleyApi.OnSubCategoryResponse() {

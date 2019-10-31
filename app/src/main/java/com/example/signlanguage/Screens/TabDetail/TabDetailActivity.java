@@ -39,9 +39,9 @@ public class TabDetailActivity extends AppCompatActivity implements TabDetailAda
         VolleyApi volley =new VolleyApi(TabDetailActivity.this);
         String subCategory_ID = getIntent().getStringExtra("subCategory_ID");
         String url = "http://signlanguage.somee.com/api/subcategories/"+subCategory_ID;
-        String[] arrUrl = {url};
+        Log.d("111", url+"");
 
-        volley.getSubcategoryData(arrUrl, new VolleyApi.OnSubCategoryResponse() {
+        volley.getSubcategoryData(url, new VolleyApi.OnSubCategoryResponse() {
             @Override
             public void OnSubCategoryResponse(List<Subcategory> subcategories) {
                 Collections.sort(subcategories, new NameComparator());

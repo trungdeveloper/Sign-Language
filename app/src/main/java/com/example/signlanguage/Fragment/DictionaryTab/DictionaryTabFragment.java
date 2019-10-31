@@ -41,40 +41,16 @@ public class DictionaryTabFragment extends Fragment implements DictionaryAdapter
 
     private void getItemTab(){
         final VolleyApi volley =new VolleyApi(getContext());
-        /*String urlJsonArryCategoty = "http://signlanguage.somee.com/api/subcategories/a7c65f55-2a51-4651-8528-8299b046465a";
-        String[] arrUrl = {urlJsonArryCategoty};
-        volley.getSubcategoryData(arrUrl, new VolleyApi.OnSubCategoryResponse() {
+        String urlJsonArryCategoty = "http://signlanguage.somee.com/api/subcategories/a7c65f55-2a51-4651-8528-8299b046465a";
+        volley.getSubcategoryData(urlJsonArryCategoty, new VolleyApi.OnSubCategoryResponse() {
             @Override
             public void OnSubCategoryResponse(List<Subcategory> subcategories) {
                 dictionaryAdapter = new DictionaryAdapter(this, subcategories);
                 recyclerViewTab.setAdapter(dictionaryAdapter);
                 dictionaryAdapter.setOnClick(DictionaryTabFragment.this);
             }
-        });*/
-
-        final String[] arrUrl = new String[8];
-
-        String urlSubcategory = "http://signlanguage.somee.com/api/categories/9ab5b53e-ca09-4145-898c-dabb73eb50af";
-        final String startUrl ="http://signlanguage.somee.com/api/subcategories/";
-        volley.makeObjectArrayRequest(urlSubcategory, new VolleyApi.OnTabResponse() {
-            @Override
-            public void onResponse(List<Tab> tabs) {
-                for(int i =0; i<tabs.size(); i++){
-                    arrUrl[i] = startUrl+tabs.get(i).getId();
-                }
-                Log.d("1", arrUrl[1]);
-                volley.getSubcategoryData(arrUrl, new VolleyApi.OnSubCategoryResponse() {
-                    @Override
-                    public void OnSubCategoryResponse(List<Subcategory> subcategories) {
-
-                        dictionaryAdapter = new DictionaryAdapter(this, subcategories);
-                        recyclerViewTab.setAdapter(dictionaryAdapter);
-                        dictionaryAdapter.setOnClick(DictionaryTabFragment.this);
-
-                    }
-                });
-            }
         });
+
     }
 
     @Override

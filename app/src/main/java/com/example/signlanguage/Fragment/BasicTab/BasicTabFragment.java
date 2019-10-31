@@ -55,6 +55,7 @@ public class BasicTabFragment extends Fragment implements BasicAdapter.OnItemCli
     public void onClickDetailTab(int position) {
         Intent intent = new Intent(getActivity(), TabDetailActivity.class);
         intent.putExtra("subCategory_ID",basicAdapter.TabsItem.get(position).getId());
+        Log.d("tag",basicAdapter.TabsItem.get(position).getId() );
         startActivity(intent);
     }
 }

@@ -53,6 +53,7 @@ public class TutorialTabFragment extends Fragment  implements TutorialAdapter.On
     public void onClickDetailTab(int position) {
         Intent intent = new Intent(getActivity(), TabDetailActivity.class);
         intent.putExtra("subCategory_ID",tutorialAdapter.TabsItem.get(position).getId());
+        Log.d("tag",tutorialAdapter.TabsItem.get(position).getId() );
         startActivity(intent);
     }
 

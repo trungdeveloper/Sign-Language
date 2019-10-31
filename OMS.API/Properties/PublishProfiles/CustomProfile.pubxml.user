@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAVPaAcbJN30OToOfVuEiiGAAAAAACAAAAAAADZgAAwAAAABAAAACGMCKn5xi/p63s76N8En7MAAAAAASAAACgAAAAEAAAAMJ7yhBHbjpGGAxmailsCSsYAAAA1utI3CcPrbVHWE7DvLc0jHDkDf+wMqVeFAAAABSbQ8NgTLFmehXKcXB483hkPzib</EncryptedPassword>
+    <_PublishTargetUrl>ftp://signlanguage.somee.com/www.signlanguage.somee.com</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>07/28/2019 12:06:33</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>10/28/2019 16:38:47</publishTime>
+    </File>
+    <File Include="AutoMapper.dll">
+      <publishTime>06/03/2019 18:28:32</publishTime>
+    </File>
+    <File Include="dotnet-aspnet-codegenerator-design.dll">
+      <publishTime>06/07/2018 00:27:02</publishTime>
+    </File>
+    <File Include="JWT.dll">
+      <publishTime>07/02/2019 23:15:22</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
+      <publishTime>06/19/2019 09:08:58</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.Workspaces.dll">
+      <publishTime>06/19/2019 09:07:30</publishTime>
+    </File>
+    <File Include="Microsoft.Extensions.PlatformAbstractions.dll">
+      <publishTime>06/19/2019 09:08:08</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll">
+      <publishTime>06/07/2018 00:27:00</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Core.dll">
+      <publishTime>06/07/2018 00:26:58</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.dll">
+      <publishTime>06/07/2018 00:26:54</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll">
+      <publishTime>06/07/2018 00:26:56</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll">
+      <publishTime>06/07/2018 00:27:02</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll">
+      <publishTime>06/07/2018 00:27:02</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll">
+      <publishTime>06/07/2018 00:26:58</publishTime>
+    </File>
+    <File Include="NuGet.Frameworks.dll">
+      <publishTime>06/19/2019 09:07:56</publishTime>
+    </File>
+    <File Include="OMS.API.deps.json">
+      <publishTime>10/31/2019 18:19:11</publishTime>
+    </File>
+    <File Include="OMS.API.dll">
+      <publishTime>10/31/2019 18:19:11</publishTime>
+    </File>
+    <File Include="OMS.API.pdb">
+      <publishTime>10/31/2019 18:19:11</publishTime>
+    </File>
+    <File Include="OMS.API.runtimeconfig.json">
+      <publishTime>10/31/2019 18:19:11</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.dll">
+      <publishTime>11/07/2018 10:25:10</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.Swagger.dll">
+      <publishTime>11/07/2018 10:25:06</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.SwaggerGen.dll">
+      <publishTime>11/07/2018 10:25:08</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.SwaggerUI.dll">
+      <publishTime>11/07/2018 10:25:06</publishTime>
+    </File>
+    <File Include="System.Composition.AttributedModel.dll">
+      <publishTime>06/19/2019 09:08:05</publishTime>
+    </File>
+    <File Include="System.Composition.Convention.dll">
+      <publishTime>06/19/2019 09:08:06</publishTime>
+    </File>
+    <File Include="System.Composition.Hosting.dll">
+      <publishTime>06/19/2019 09:08:07</publishTime>
+    </File>
+    <File Include="System.Composition.Runtime.dll">
+      <publishTime>06/19/2019 09:08:08</publishTime>
+    </File>
+    <File Include="System.Composition.TypedParts.dll">
+      <publishTime>06/19/2019 09:08:08</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>10/31/2019 18:19:11</publishTime>
+    </File>
+    <File Include="wwwroot/Files/ProductImage/2018416153535-hongtravietquat.jpg">
+      <publishTime>07/28/2019 12:06:33</publishTime>
+    </File>
+    <File Include="wwwroot/Files/ProductImage/2018628165317-tra-sua-panda-new-.jpg">
+      <publishTime>07/28/2019 12:06:33</publishTime>
+    </File>
+    <File Include="wwwroot/Files/ProductImage/201862816548-tra-sua-toco.jpg">
+      <publishTime>07/28/2019 12:06:33</publishTime>
+    </File>
+    <File Include="wwwroot/Files/ProductImage/2018629104230-o-long-kem-pho-mai.jpg">
+      <publishTime>07/28/2019 12:06:33</publishTime>
+    </File>
+    <File Include="wwwroot/Files/ProductImage/4a92b1fd-6a2d-47bb-be53-bc71e0876f87.jpg">
+      <publishTime>07/28/2019 12:06:33</publishTime>
+    </File>
+    <File Include="wwwroot/Files/ProductImage/foody-mobile-m-chia-jpg-845-636402867006020492.jpg">
+      <publishTime>07/28/2019 12:06:33</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -4,20 +4,19 @@ package com.example.signlanguage;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.signlanguage.Screens.TabDetail.TabDetailActivity;
-import com.example.signlanguage.Screens.TabDetail.TabDetailAdapter;
 import com.example.signlanguage.model.NameComparator;
 import com.example.signlanguage.model.Subcategory;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -25,42 +24,12 @@ public class SearchableActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerAdapter recyclerAdapter;
 
-//    List<String> moviesList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-
-//        moviesList = new ArrayList<>();
-//        moviesList.add("Iron Man");
-//        moviesList.add("The Incredible Hulk");
-//        moviesList.add("Iron Man 2");
-//        moviesList.add("Thor");
-//        moviesList.add("Captain America: The First Avenger");
-//        moviesList.add("The Avengers");
-//        moviesList.add("Iron Man 3");
-//        moviesList.add("Thor: The Dark World");
-//        moviesList.add("Captain America: The Winter Soldier");
-//        moviesList.add("Guardians of the Galaxy");
-//        moviesList.add("Avengers: Age of Ultron");
-//        moviesList.add("Ant-Man");
-//        moviesList.add("Captain America: Civil War");
-//        moviesList.add("Doctor Strange");
-//        moviesList.add("Guardians of the Galaxy Vol. 2");
-//        moviesList.add("Spider-Man: Homecoming");
-//        moviesList.add("Thor: Ragnarok");
-//        moviesList.add("Black Panther");
-//        moviesList.add("Avengers: Infinity War");
-//        moviesList.add("Ant-Man and the Wasp");
-//        moviesList.add("Captain Marvel");
-//        moviesList.add("Avengers: Endgame");
-//        moviesList.add("Spider-Man: Far From Home");
-//
         recyclerView = findViewById(R.id.recyclerView);
-//        recyclerAdapter = new RecyclerAdapter(moviesList);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        recyclerView.setAdapter(recyclerAdapter);
 
         VolleyApi volley =new VolleyApi(this);
 
@@ -76,8 +45,7 @@ public class SearchableActivity extends AppCompatActivity {
 
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
-
-
+//        invalidateOptionsMenu();
     }
 
 
@@ -86,9 +54,9 @@ public class SearchableActivity extends AppCompatActivity {
 
         getMenuInflater().inflate(R.menu.options_menu, menu);
         MenuItem menuItem = menu.findItem(R.id.action_search);
+        menu.findItem(R.id.btn_open_search).setVisible(false);
         SearchView searchView = (SearchView) menuItem.getActionView();
-        searchView.setIconifiedByDefault(false);
-        searchView.requestFocus();
+        menuItem.expandActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -99,6 +67,18 @@ public class SearchableActivity extends AppCompatActivity {
             public boolean onQueryTextChange(String newText) {
                 recyclerAdapter.getFilter().filter(newText);
                 return false;
+            }
+        });
+
+        searchView.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
+            @Override
+            public void onViewAttachedToWindow(View v) {
+
+            }
+
+            @Override
+            public void onViewDetachedFromWindow(View arg0) {
+                finish();
             }
         });
         return super.onCreateOptionsMenu(menu);

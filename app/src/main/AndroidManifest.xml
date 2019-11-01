@@ -15,6 +15,7 @@
         <activity android:name=".Screens.TabDetail.Favorites.FavoritesActivity"></activity>
         <activity android:name=".Screens.TabDetail.ResultTabActivity" />
         <activity android:name=".Screens.TabDetail.TabDetail.TabDetailActivity" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Fragment.BasicTab.BasicTabFragment" />
+        <activity android:name=".Screens.TabDetail.Search.SearchableActivity"></activity>
     </application>
 
 </manifest>

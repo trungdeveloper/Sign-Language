@@ -22,6 +22,7 @@ import java.util.List;
 
 public class VolleyApi {
     Context context;
+    List<Subcategory> subcategories = new ArrayList<>();
 
     public VolleyApi(Context context) {
         this.context = context;
@@ -51,6 +52,7 @@ public class VolleyApi {
                                 String id = subCategories.getString("id");
                                 Tab tab = new Tab(id, name, image);
                                 tabs.add(tab);
+
                             }
                             listener.onResponse(tabs);
                         } catch (JSONException e) {
@@ -78,8 +80,9 @@ public class VolleyApi {
     }
 
 
-    public void getSubcategoryData(String urlJsonArry, final OnSubCategoryResponse listener) {
+    public void getSubcategoryData(final String urlJsonArry, final OnSubCategoryResponse listener) {
         RequestQueue requestQueue = Volley.newRequestQueue(context);
+
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, urlJsonArry, null,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -87,9 +90,8 @@ public class VolleyApi {
                         try {
                             // Get the JSON array
                             JSONArray array = response.getJSONArray("posts");
-
                             // Loop through the array elements
-                            List<Subcategory> subcategories = new ArrayList<>();
+
                             for (int i = 0; i < array.length(); i++) {
                                 // Get current json object
                                 JSONObject posts = array.getJSONObject(i);
@@ -101,10 +103,11 @@ public class VolleyApi {
                                 String video = posts.getString("video");
                                 Subcategory subcategory = new Subcategory(subCategory_id, id, keyword, image, video);
                                 subcategories.add(subcategory);
+                                Log.d("12", "dfgdgfdgfdg" + subcategories.get(i).getKeyword());
 
                             }
-                            listener.OnSubCategoryResponse(subcategories);
 
+                            listener.OnSubCategoryResponse(subcategories);
                         } catch (JSONException e) {
                             e.printStackTrace();
                             Toast.makeText(context, "Errr" + e,
@@ -117,15 +120,16 @@ public class VolleyApi {
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(context, "Errr" + error,
                                 Toast.LENGTH_LONG).show();
-
                     }
                 }
         );
+
+
         requestQueue.add(jsonObjectRequest);
     }
 
-    public void getAllPosts(final OnSubCategoryResponse listener) {
-        String urlJsonArry = "http://signlanguage.somee.com/api/posts";
+    public void getAllPosts(String urlJsonArry, final OnSubCategoryResponse listener) {
+
         RequestQueue requestQueue = Volley.newRequestQueue(context);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, urlJsonArry, null,
                 new Response.Listener<JSONObject>() {

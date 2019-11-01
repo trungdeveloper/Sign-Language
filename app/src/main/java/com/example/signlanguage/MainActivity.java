@@ -2,19 +2,16 @@ package com.example.signlanguage;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
 import androidx.viewpager.widget.ViewPager;
 
-import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 
+import com.example.signlanguage.Screens.TabDetail.Search.SearchableActivity;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.btn_open_search) {
-            startActivity(new Intent(getApplicationContext(),SearchableActivity.class));
+            startActivity(new Intent(getApplicationContext(), SearchableActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);

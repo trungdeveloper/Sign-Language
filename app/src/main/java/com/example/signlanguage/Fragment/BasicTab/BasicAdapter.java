@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.signlanguage.R;
 import com.example.signlanguage.VolleyApi;
 import com.example.signlanguage.model.Tab;
+import com.squareup.picasso.Picasso;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -42,6 +43,13 @@ public class BasicAdapter extends RecyclerView.Adapter<BasicAdapter.BasicViewHol
     @Override
     public void onBindViewHolder(@NonNull BasicViewHolder holder, final int position) {
         holder.tvView.setText(TabsItem.get(position).getName());
+        if (TabsItem.get(position).getImage() == "" || TabsItem.get(position).getImage() == null){
+            holder.ImageItemTab.setImageResource(R.drawable.toys);
+        }else {
+            Picasso.get().load(TabsItem.get(position).getImage()).into(holder.ImageItemTab);
+        }
+
+
         holder.ImageItemTab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,8 +57,6 @@ public class BasicAdapter extends RecyclerView.Adapter<BasicAdapter.BasicViewHol
 
             }
         });
-
-
 
     }
 

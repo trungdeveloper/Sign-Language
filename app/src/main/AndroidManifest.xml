@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.signlanguage">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -16,15 +17,20 @@
         <activity android:name=".Screens.TabDetail.ResultTabActivity" />
         <activity android:name=".Screens.TabDetail.TabDetail.TabDetailActivity" />
 
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <activity
+                android:name=".SplashActivity"
+                tools:ignore="WrongManifestParent">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+            </activity>
+
         <activity android:name=".Fragment.BasicTab.BasicTabFragment" />
         <activity android:name=".Screens.TabDetail.Search.SearchableActivity"></activity>
+        <activity android:name=".MainActivity">
+        </activity>
     </application>
 
 </manifest>

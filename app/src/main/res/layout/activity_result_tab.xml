@@ -27,16 +27,21 @@
             android:layout_margin="10dp"
             android:orientation="horizontal">
             <TextView
+                android:layout_marginLeft="15dp"
                 android:id="@+id/keyword"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
 
             <Button
+                android:id="@+id/btn_add_favorite"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_alignParentRight="true"
-                android:background="@drawable/starblank" />
+                android:background="@drawable/starblank"
+                android:layout_marginRight="15dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

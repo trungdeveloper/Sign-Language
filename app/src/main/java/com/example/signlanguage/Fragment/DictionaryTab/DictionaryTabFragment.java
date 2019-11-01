@@ -41,7 +41,7 @@ public class DictionaryTabFragment extends Fragment implements DictionaryAdapter
 
     private void getItemTab(){
         final VolleyApi volley =new VolleyApi(getContext());
-        String urlJsonArryCategoty = "http://signlanguage.somee.com/api/subcategories/a7c65f55-2a51-4651-8528-8299b046465a";
+        String urlJsonArryCategoty = "http://signlanguage.somee.com/api/dictionary";
         volley.getSubcategoryData(urlJsonArryCategoty, new VolleyApi.OnSubCategoryResponse() {
             @Override
             public void OnSubCategoryResponse(List<Subcategory> subcategories) {

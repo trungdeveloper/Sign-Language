@@ -1,7 +1,6 @@
-package com.example.signlanguage.Screens.TabDetail;
+package com.example.signlanguage.Screens.TabDetail.TabDetail;
 
 import android.content.Context;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,12 +14,10 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.signlanguage.Fragment.BasicTab.BasicAdapter;
 import com.example.signlanguage.R;
 
 import com.example.signlanguage.VolleyApi;
 import com.example.signlanguage.model.Subcategory;
-import com.example.signlanguage.model.Tab;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

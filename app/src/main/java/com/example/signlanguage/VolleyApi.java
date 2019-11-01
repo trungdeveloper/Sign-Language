@@ -120,7 +120,6 @@ public class VolleyApi {
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(context, "Errr" + error,
                                 Toast.LENGTH_LONG).show();
-
                     }
                 }
         );

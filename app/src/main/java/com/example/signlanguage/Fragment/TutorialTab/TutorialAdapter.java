@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.signlanguage.R;
 import com.example.signlanguage.VolleyApi;
 import com.example.signlanguage.model.Tab;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +41,7 @@ public class TutorialAdapter extends RecyclerView.Adapter<TutorialAdapter.Tutori
     @Override
     public void onBindViewHolder(@NonNull TutorialViewHolder holder, final int position) {
         holder.tvView.setText(TabsItem.get(position).getName());
+        Picasso.get().load(TabsItem.get(position).getImage()).into(holder.ImageItemTab);
         holder.ImageItemTab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,9 +49,6 @@ public class TutorialAdapter extends RecyclerView.Adapter<TutorialAdapter.Tutori
 
             }
         });
-
-
-
     }
 
     @Override
@@ -80,6 +79,5 @@ public class TutorialAdapter extends RecyclerView.Adapter<TutorialAdapter.Tutori
         this.onClick = onClick;
     }
 
-    public class BasicTabDetailViewHolder {
-    }
+
 }

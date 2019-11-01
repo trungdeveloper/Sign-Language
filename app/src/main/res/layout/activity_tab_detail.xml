@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Screens.TabDetail.TabDetailActivity">
+    tools:context=".Screens.TabDetail.TabDetail.TabDetailActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewBasicTabDetail"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+       android:background="@android:color/white"/>
 
 
 

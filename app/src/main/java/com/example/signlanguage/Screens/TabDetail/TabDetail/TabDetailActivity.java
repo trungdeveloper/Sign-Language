@@ -1,4 +1,4 @@
-package com.example.signlanguage.Screens.TabDetail;
+package com.example.signlanguage.Screens.TabDetail.TabDetail;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,16 +7,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.MediaController;
-import android.widget.Toast;
 
 import com.example.signlanguage.R;
+import com.example.signlanguage.Screens.TabDetail.ResultTabActivity;
 import com.example.signlanguage.VolleyApi;
 import com.example.signlanguage.model.NameComparator;
 import com.example.signlanguage.model.Subcategory;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -32,13 +30,7 @@ public class TabDetailActivity extends AppCompatActivity implements TabDetailAda
 
         rcViewDetail = findViewById(R.id.recyclerViewBasicTabDetail);
         rcViewDetail.setLayoutManager(new LinearLayoutManager(this));
-
-    }
-
-    protected void onResume() {
-        super.onResume();
         getData();
-
     }
 
     private void getData(){
@@ -50,7 +42,7 @@ public class TabDetailActivity extends AppCompatActivity implements TabDetailAda
             @Override
             public void OnSubCategoryResponse(List<Subcategory> subcategories) {
                 Collections.sort(subcategories, new NameComparator());
-                tabDetailAdapterAdapter = new TabDetailAdapter(this, subcategories);
+                tabDetailAdapterAdapter = new TabDetailAdapter(this, subcategories, TabDetailActivity.this);
                 rcViewDetail.setAdapter(tabDetailAdapterAdapter);
                tabDetailAdapterAdapter.setOnClick(TabDetailActivity.this);
             }
@@ -61,7 +53,7 @@ public class TabDetailActivity extends AppCompatActivity implements TabDetailAda
     @Override
     public void onClickDetailTab(int position) {
         Intent intent = new Intent(this, ResultTabActivity.class);
-        intent.putExtra("subCategory_ID",tabDetailAdapterAdapter.SubCategoryItem.get(position).getId());
+        intent.putExtra("id",tabDetailAdapterAdapter.SubCategoryItem.get(position).getId());
         intent.putExtra("keyword",tabDetailAdapterAdapter.SubCategoryItem.get(position).getKeyword());
         intent.putExtra("image",tabDetailAdapterAdapter.SubCategoryItem.get(position).getImage());
         intent.putExtra("video",tabDetailAdapterAdapter.SubCategoryItem.get(position).getVideo());

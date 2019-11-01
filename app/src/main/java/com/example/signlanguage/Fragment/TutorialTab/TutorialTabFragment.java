@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.signlanguage.R;
-import com.example.signlanguage.Screens.TabDetail.TabDetailActivity;
+import com.example.signlanguage.Screens.TabDetail.TabDetail.TabDetailActivity;
 import com.example.signlanguage.VolleyApi;
 import com.example.signlanguage.model.Tab;
 
@@ -31,13 +31,8 @@ public class TutorialTabFragment extends Fragment  implements TutorialAdapter.On
 
         recyclerViewTab = rootView.findViewById(R.id.ItemTutorial);
         recyclerViewTab.setLayoutManager(new GridLayoutManager(getActivity(),2));
-        return rootView;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
         getItemTab();
+        return rootView;
     }
 
     private void getItemTab(){
@@ -58,6 +53,7 @@ public class TutorialTabFragment extends Fragment  implements TutorialAdapter.On
     public void onClickDetailTab(int position) {
         Intent intent = new Intent(getActivity(), TabDetailActivity.class);
         intent.putExtra("subCategory_ID",tutorialAdapter.TabsItem.get(position).getId());
+        Log.d("tag",tutorialAdapter.TabsItem.get(position).getId() );
         startActivity(intent);
     }
 

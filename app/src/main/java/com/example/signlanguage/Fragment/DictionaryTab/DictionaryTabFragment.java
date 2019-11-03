@@ -56,7 +56,7 @@ public class DictionaryTabFragment extends Fragment implements DictionaryAdapter
     @Override
     public void onClickResultItem(int position) {
         Intent intent = new Intent(getActivity(), ResultTabActivity.class);
-        intent.putExtra("subCategory_ID",dictionaryAdapter.TabsItem.get(position).getId());
+        intent.putExtra("id",dictionaryAdapter.TabsItem.get(position).getId());
         intent.putExtra("keyword",dictionaryAdapter.TabsItem.get(position).getKeyword());
         intent.putExtra("image",dictionaryAdapter.TabsItem.get(position).getImage());
         intent.putExtra("video",dictionaryAdapter.TabsItem.get(position).getVideo());

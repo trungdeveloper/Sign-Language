@@ -34,7 +34,7 @@ public class SearchableActivity extends AppCompatActivity implements RecyclerAda
         recyclerView = findViewById(R.id.recyclerView);
 
         VolleyApi volley =new VolleyApi(this);
-        String urlJsonArry = "http://signlanguage.somee.com/api/posts";
+        String urlJsonArry = "http://signlanguage.somee.com/api/posts?limit=1000";
         volley.getAllPosts(urlJsonArry,new VolleyApi.OnSubCategoryResponse() {
             @Override
             public void OnSubCategoryResponse(List<Subcategory> subcategories) {

@@ -20,6 +20,7 @@ import com.example.signlanguage.Database.FavoriteDao;
 import com.example.signlanguage.Database.Favorites;
 import com.example.signlanguage.R;
 
+import java.sql.SQLClientInfoException;
 import java.util.List;
 
 public class ResultTabActivity extends AppCompatActivity {
@@ -80,6 +81,7 @@ public class ResultTabActivity extends AppCompatActivity {
                 protected Void doInBackground(Void... voids) {
                     Favorites favorites = new Favorites(id, keyword, image, urlVideo);
                     db.FavoriteDao().insertAll(favorites);
+
                     return null;
                 }
 

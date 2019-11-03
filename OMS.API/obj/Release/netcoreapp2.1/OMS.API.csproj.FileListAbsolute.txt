@@ -25,3 +25,17 @@ E:\SL\api\OMS.API\obj\Release\netcoreapp2.1\OMS.API.AssemblyInfo.cs
 E:\SL\api\OMS.API\obj\Release\netcoreapp2.1\OMS.API.RazorTargetAssemblyInfo.cache
 E:\SL\api\OMS.API\obj\Release\netcoreapp2.1\OMS.API.dll
 E:\SL\api\OMS.API\obj\Release\netcoreapp2.1\OMS.API.pdb
+D:\SL\Sign-Language\OMS.API\bin\Release\netcoreapp2.1\OMS.API.deps.json
+D:\SL\Sign-Language\OMS.API\bin\Release\netcoreapp2.1\OMS.API.runtimeconfig.json
+D:\SL\Sign-Language\OMS.API\bin\Release\netcoreapp2.1\OMS.API.runtimeconfig.dev.json
+D:\SL\Sign-Language\OMS.API\bin\Release\netcoreapp2.1\OMS.API.dll
+D:\SL\Sign-Language\OMS.API\bin\Release\netcoreapp2.1\OMS.API.pdb
+D:\SL\Sign-Language\OMS.API\obj\Release\netcoreapp2.1\OMS.API.csproj.CoreCompileInputs.cache
+D:\SL\Sign-Language\OMS.API\obj\Release\netcoreapp2.1\OMS.API.RazorAssemblyInfo.cache
+D:\SL\Sign-Language\OMS.API\obj\Release\netcoreapp2.1\OMS.API.RazorAssemblyInfo.cs
+D:\SL\Sign-Language\OMS.API\obj\Release\netcoreapp2.1\OMS.API.AssemblyInfoInputs.cache
+D:\SL\Sign-Language\OMS.API\obj\Release\netcoreapp2.1\OMS.API.AssemblyInfo.cs
+D:\SL\Sign-Language\OMS.API\obj\Release\netcoreapp2.1\OMS.API.RazorTargetAssemblyInfo.cache
+D:\SL\Sign-Language\OMS.API\obj\Release\netcoreapp2.1\OMS.API.dll
+D:\SL\Sign-Language\OMS.API\obj\Release\netcoreapp2.1\OMS.API.pdb
+D:\SL\Sign-Language\OMS.API\obj\Release\netcoreapp2.1\OMS.API.csprojAssemblyReference.cache

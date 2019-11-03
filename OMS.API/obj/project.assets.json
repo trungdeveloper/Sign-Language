@@ -18,8 +18,8 @@
       "EntityFramework/6.3.0": {
         "type": "package",
         "build": {
-          "buildTransitive/EntityFramework.props": {},
-          "buildTransitive/EntityFramework.targets": {}
+          "build/EntityFramework.props": {},
+          "build/EntityFramework.targets": {}
         }
       },
       "JWT/5.2.2": {
@@ -12929,23 +12929,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tai.tran.PN\\.nuget\\packages\\": {},
+    "C:\\Users\\Adminstrator\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\SL\\api\\OMS.API\\OMS.API.csproj",
+      "projectUniqueName": "D:\\SL\\Sign-Language\\OMS.API\\OMS.API.csproj",
       "projectName": "OMS.API",
-      "projectPath": "E:\\SL\\api\\OMS.API\\OMS.API.csproj",
-      "packagesPath": "C:\\Users\\tai.tran.PN\\.nuget\\packages\\",
-      "outputPath": "E:\\SL\\api\\OMS.API\\obj\\",
+      "projectPath": "D:\\SL\\Sign-Language\\OMS.API\\OMS.API.csproj",
+      "packagesPath": "C:\\Users\\Adminstrator\\.nuget\\packages\\",
+      "outputPath": "D:\\SL\\Sign-Language\\OMS.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\tai.tran.PN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Adminstrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

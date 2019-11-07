@@ -49,7 +49,8 @@ public class BasicTabFragment extends Fragment implements BasicAdapter.OnItemCli
 
     private void getItemTab(){
         VolleyApi volley =new VolleyApi(getContext());
-        String urlJsonArryCategoty = "http://signlanguage.somee.com/api/categories/bf516b98-5bf4-4f14-b467-87f7bafca53e";
+
+        String urlJsonArryCategoty = getResources().getString(R.string.API_URL)+"categories/bf516b98-5bf4-4f14-b467-87f7bafca53e";
 
         volley.makeObjectArrayRequest(urlJsonArryCategoty, new VolleyApi.OnTabResponse() {
             @Override

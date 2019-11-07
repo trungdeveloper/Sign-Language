@@ -37,7 +37,7 @@ public class TutorialTabFragment extends Fragment  implements TutorialAdapter.On
 
     private void getItemTab(){
         VolleyApi volley =new VolleyApi(getContext());
-        String urlJsonArryCategoty = "http://signlanguage.somee.com/api/categories/acc4bb3a-3fa0-4207-bc69-5c1d36646c6f";
+        String urlJsonArryCategoty = getResources().getString(R.string.API_URL)+"categories/acc4bb3a-3fa0-4207-bc69-5c1d36646c6f";
 
         volley.makeObjectArrayRequest(urlJsonArryCategoty, new VolleyApi.OnTabResponse() {
             @Override
@@ -53,7 +53,6 @@ public class TutorialTabFragment extends Fragment  implements TutorialAdapter.On
     public void onClickDetailTab(int position) {
         Intent intent = new Intent(getActivity(), TabDetailActivity.class);
         intent.putExtra("subCategory_ID",tutorialAdapter.TabsItem.get(position).getId());
-        Log.d("tag",tutorialAdapter.TabsItem.get(position).getId() );
         startActivity(intent);
     }
 

@@ -2,8 +2,6 @@ package com.example.signlanguage.Fragment.DictionaryTab;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.ResultReceiver;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +12,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.signlanguage.R;
-import com.example.signlanguage.Screens.TabDetail.ResultTabActivity;
+import com.example.signlanguage.Screens.ResultActivity.ResultTabActivity;
 import com.example.signlanguage.VolleyApi;
 import com.example.signlanguage.model.Subcategory;
-import com.example.signlanguage.model.Tab;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class DictionaryTabFragment extends Fragment implements DictionaryAdapter.OnItemClicked {
@@ -41,8 +37,8 @@ public class DictionaryTabFragment extends Fragment implements DictionaryAdapter
 
     private void getItemTab(){
         final VolleyApi volley =new VolleyApi(getContext());
-        String urlJsonArryCategoty = "http://signlanguage.somee.com/api/dictionary";
-        volley.getAllPosts(urlJsonArryCategoty, new VolleyApi.OnSubCategoryResponse() {
+        String urlJsonArryCategoty = getResources().getString(R.string.API_URL)+"dictionary?limit=1000";
+        volley.getPosts(urlJsonArryCategoty,"sources", new VolleyApi.OnSubCategoryResponse() {
             @Override
             public void OnSubCategoryResponse(List<Subcategory> subcategories) {
                 dictionaryAdapter = new DictionaryAdapter(this, subcategories);

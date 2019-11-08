@@ -17,7 +17,7 @@ namespace OMS.API.Core.Business.Models.SubCategories
                 CategoryId = subCategory.CategoryId;
                 Id = subCategory.Id;
                 Name = subCategory.Name;
-                Posts = subCategory.Posts.Where(x => !x.RecordDeleted).Select(x => new PostViewModel(x)).ToList();
+                Posts = subCategory.Posts.Where(x => !x.RecordDeleted).OrderBy(x => x.Keyword).ToList().Select(x => new PostViewModel(x)).ToList();
             }
         }
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\SL\\api\\OMS.API\\OMS.API.csproj": {}
+    "E:\\tai.tran\\SignLanguage\\OMS.API\\OMS.API.csproj": {}
   },
   "projects": {
-    "E:\\SL\\api\\OMS.API\\OMS.API.csproj": {
+    "E:\\tai.tran\\SignLanguage\\OMS.API\\OMS.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\SL\\api\\OMS.API\\OMS.API.csproj",
+        "projectUniqueName": "E:\\tai.tran\\SignLanguage\\OMS.API\\OMS.API.csproj",
         "projectName": "OMS.API",
-        "projectPath": "E:\\SL\\api\\OMS.API\\OMS.API.csproj",
+        "projectPath": "E:\\tai.tran\\SignLanguage\\OMS.API\\OMS.API.csproj",
         "packagesPath": "C:\\Users\\tai.tran.PN\\.nuget\\packages\\",
-        "outputPath": "E:\\SL\\api\\OMS.API\\obj\\",
+        "outputPath": "E:\\tai.tran\\SignLanguage\\OMS.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

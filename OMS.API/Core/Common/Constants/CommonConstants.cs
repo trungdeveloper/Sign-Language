@@ -5,7 +5,7 @@
         public class Config
         {
             public const int DEFAULT_SKIP = 1;
-            public const int DEFAULT_TAKE = 30;
+            public const int DEFAULT_TAKE = 1000;
         }
     }
 }

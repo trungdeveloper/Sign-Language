@@ -123,3 +123,17 @@ D:\SL\Sign-Language\OMS.API\obj\Debug\netcoreapp2.1\OMS.API.RazorTargetAssemblyI
 D:\SL\Sign-Language\OMS.API\obj\Debug\netcoreapp2.1\OMS.API.dll
 D:\SL\Sign-Language\OMS.API\obj\Debug\netcoreapp2.1\OMS.API.pdb
 D:\SL\Sign-Language\OMS.API\obj\Debug\netcoreapp2.1\OMS.API.csprojAssemblyReference.cache
+E:\tai.tran\SignLanguage\OMS.API\bin\Debug\netcoreapp2.1\OMS.API.deps.json
+E:\tai.tran\SignLanguage\OMS.API\bin\Debug\netcoreapp2.1\OMS.API.runtimeconfig.json
+E:\tai.tran\SignLanguage\OMS.API\bin\Debug\netcoreapp2.1\OMS.API.runtimeconfig.dev.json
+E:\tai.tran\SignLanguage\OMS.API\bin\Debug\netcoreapp2.1\OMS.API.dll
+E:\tai.tran\SignLanguage\OMS.API\bin\Debug\netcoreapp2.1\OMS.API.pdb
+E:\tai.tran\SignLanguage\OMS.API\obj\Debug\netcoreapp2.1\OMS.API.csprojAssemblyReference.cache
+E:\tai.tran\SignLanguage\OMS.API\obj\Debug\netcoreapp2.1\OMS.API.csproj.CoreCompileInputs.cache
+E:\tai.tran\SignLanguage\OMS.API\obj\Debug\netcoreapp2.1\OMS.API.RazorAssemblyInfo.cache
+E:\tai.tran\SignLanguage\OMS.API\obj\Debug\netcoreapp2.1\OMS.API.RazorAssemblyInfo.cs
+E:\tai.tran\SignLanguage\OMS.API\obj\Debug\netcoreapp2.1\OMS.API.AssemblyInfoInputs.cache
+E:\tai.tran\SignLanguage\OMS.API\obj\Debug\netcoreapp2.1\OMS.API.AssemblyInfo.cs
+E:\tai.tran\SignLanguage\OMS.API\obj\Debug\netcoreapp2.1\OMS.API.RazorTargetAssemblyInfo.cache
+E:\tai.tran\SignLanguage\OMS.API\obj\Debug\netcoreapp2.1\OMS.API.dll
+E:\tai.tran\SignLanguage\OMS.API\obj\Debug\netcoreapp2.1\OMS.API.pdb

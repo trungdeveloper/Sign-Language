@@ -6,15 +6,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAz//SrxPZPUyAQ6ntZGZ+uAAAAAACAAAAAAAQZgAAAAEAACAAAAAW6Qp4peCWWv0zsdGJu5YzHVNPkUC39ibaReu+glYpvQAAAAAOgAAAAAIAACAAAAA7VC9j9cF7WNqhY27DB5w39OJtCeAP/Pr/nM+Ero3FPSAAAAAbnWKadxJ9nePZYkJaxgAhV7WpZ02wnRdWhTB/iIzRekAAAADlexYkup2oLXWo6CglCJ1ErF615l2YMci/5SVsjE2Ce2B2Hi7TJLgfz7zpPBh4RS3tDHc7mrKdAR1NPCiBetm7</EncryptedPassword>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAVPaAcbJN30OToOfVuEiiGAAAAAACAAAAAAADZgAAwAAAABAAAADavGiIOV3oLtt1TivmyGM4AAAAAASAAACgAAAAEAAAAA8fiqQVZlWp4ckdL5rPDPUYAAAAC0pxW8EPJ4jvRethyT3uP9F8Nv9nUf8hFAAAAJZT2A7rQs8u4oLCVXzhswUbCd/T</EncryptedPassword>
     <_PublishTargetUrl>ftp://signlanguage.somee.com/www.signlanguage.somee.com</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
-      <publishTime>11/03/2019 20:00:48</publishTime>
+      <publishTime>11/08/2019 10:09:44</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>11/03/2019 20:00:48</publishTime>
+      <publishTime>11/08/2019 10:09:44</publishTime>
     </File>
     <File Include="AutoMapper.dll">
       <publishTime>06/03/2019 18:28:32</publishTime>
@@ -26,13 +26,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/02/2019 23:15:22</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
-      <publishTime>07/28/2019 12:59:55</publishTime>
+      <publishTime>06/19/2019 09:08:58</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.Workspaces.dll">
-      <publishTime>07/28/2019 13:00:49</publishTime>
+      <publishTime>06/19/2019 09:07:30</publishTime>
     </File>
     <File Include="Microsoft.Extensions.PlatformAbstractions.dll">
-      <publishTime>07/28/2019 13:00:48</publishTime>
+      <publishTime>06/19/2019 09:08:08</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll">
       <publishTime>06/07/2018 00:27:00</publishTime>
@@ -56,19 +56,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/07/2018 00:26:58</publishTime>
     </File>
     <File Include="NuGet.Frameworks.dll">
-      <publishTime>07/28/2019 13:00:07</publishTime>
+      <publishTime>06/19/2019 09:07:56</publishTime>
     </File>
     <File Include="OMS.API.deps.json">
-      <publishTime>11/03/2019 20:24:56</publishTime>
+      <publishTime>11/08/2019 10:20:23</publishTime>
     </File>
     <File Include="OMS.API.dll">
-      <publishTime>11/03/2019 20:12:51</publishTime>
+      <publishTime>11/08/2019 10:20:22</publishTime>
     </File>
     <File Include="OMS.API.pdb">
-      <publishTime>11/03/2019 20:12:51</publishTime>
+      <publishTime>11/08/2019 10:20:22</publishTime>
     </File>
     <File Include="OMS.API.runtimeconfig.json">
-      <publishTime>11/03/2019 20:24:56</publishTime>
+      <publishTime>11/08/2019 10:20:23</publishTime>
     </File>
     <File Include="Swashbuckle.AspNetCore.dll">
       <publishTime>11/07/2018 10:25:10</publishTime>
@@ -83,22 +83,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/07/2018 10:25:06</publishTime>
     </File>
     <File Include="System.Composition.AttributedModel.dll">
-      <publishTime>07/28/2019 13:00:38</publishTime>
+      <publishTime>06/19/2019 09:08:05</publishTime>
     </File>
     <File Include="System.Composition.Convention.dll">
-      <publishTime>07/28/2019 13:00:39</publishTime>
+      <publishTime>06/19/2019 09:08:06</publishTime>
     </File>
     <File Include="System.Composition.Hosting.dll">
-      <publishTime>07/28/2019 13:00:40</publishTime>
+      <publishTime>06/19/2019 09:08:07</publishTime>
     </File>
     <File Include="System.Composition.Runtime.dll">
-      <publishTime>07/28/2019 13:00:48</publishTime>
+      <publishTime>06/19/2019 09:08:08</publishTime>
     </File>
     <File Include="System.Composition.TypedParts.dll">
-      <publishTime>07/28/2019 13:00:48</publishTime>
+      <publishTime>06/19/2019 09:08:08</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>11/03/2019 20:24:56</publishTime>
+      <publishTime>11/08/2019 10:20:23</publishTime>
     </File>
     <File Include="wwwroot/Files/ProductImage/2018416153535-hongtravietquat.jpg">
       <publishTime>07/28/2019 12:06:33</publishTime>

@@ -1,4 +1,4 @@
-package com.example.signlanguage.Screens.TabDetail.TabDetail;
+package com.example.signlanguage.Screens.TabDetail;
 
 import android.content.Context;
 import android.util.TypedValue;
@@ -57,7 +57,7 @@ public class TabDetailAdapter extends RecyclerView.Adapter<TabDetailAdapter.Basi
             holder.nameItem.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
 
         }else {
-            Picasso.get().load(SubCategoryItem.get(position).getImage()).into(holder.image);
+            Picasso.get().load(SubCategoryItem.get(position).getImage()).fit().into(holder.image);
         }
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override

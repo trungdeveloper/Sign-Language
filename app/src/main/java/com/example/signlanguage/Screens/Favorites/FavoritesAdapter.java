@@ -1,4 +1,4 @@
-package com.example.signlanguage.Screens.TabDetail.Favorites;
+package com.example.signlanguage.Screens.Favorites;
 
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;

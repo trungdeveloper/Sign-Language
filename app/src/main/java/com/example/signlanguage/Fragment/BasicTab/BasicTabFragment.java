@@ -14,8 +14,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.signlanguage.R;
-import com.example.signlanguage.Screens.TabDetail.Favorites.FavoritesActivity;
-import com.example.signlanguage.Screens.TabDetail.TabDetail.TabDetailActivity;
+import com.example.signlanguage.Screens.Favorites.FavoritesActivity;
+import com.example.signlanguage.Screens.TabDetail.TabDetailActivity;
 import com.example.signlanguage.model.Tab;
 import com.example.signlanguage.VolleyApi;
 

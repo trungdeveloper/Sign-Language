@@ -1,4 +1,4 @@
-package com.example.signlanguage.Screens.TabDetail.TabDetail;
+package com.example.signlanguage.Screens.TabDetail;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;

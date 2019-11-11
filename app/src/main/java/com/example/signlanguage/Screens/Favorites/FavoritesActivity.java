@@ -1,4 +1,4 @@
-package com.example.signlanguage.Screens.TabDetail.Favorites;
+package com.example.signlanguage.Screens.Favorites;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;

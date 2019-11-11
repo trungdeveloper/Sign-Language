@@ -15,9 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Screens.TabDetail.Favorites.FavoritesActivity"></activity>
+        <activity android:name=".Screens.Favorites.FavoritesActivity"></activity>
         <activity android:name=".Screens.ResultActivity.ResultTabActivity" />
-        <activity android:name=".Screens.TabDetail.TabDetail.TabDetailActivity" />
+        <activity android:name=".Screens.TabDetail.TabDetailActivity" />
 
             <activity
                 android:name=".SplashActivity"
@@ -26,7 +26,7 @@
             </activity>
 
         <activity android:name=".Fragment.BasicTab.BasicTabFragment" />
-        <activity android:name=".Screens.TabDetail.Search.SearchableActivity"></activity>
+        <activity android:name=".Screens.Search.SearchableActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

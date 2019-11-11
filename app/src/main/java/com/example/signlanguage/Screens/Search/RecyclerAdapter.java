@@ -1,4 +1,4 @@
-package com.example.signlanguage.Screens.TabDetail.Search;
+package com.example.signlanguage.Screens.Search;
 
 
 import android.view.LayoutInflater;

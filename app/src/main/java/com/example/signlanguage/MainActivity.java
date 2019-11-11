@@ -20,7 +20,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.signlanguage.receiver.NetworkStateChangeReceiver;
-import com.example.signlanguage.Screens.TabDetail.Search.SearchableActivity;
+import com.example.signlanguage.Screens.Search.SearchableActivity;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 

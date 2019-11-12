@@ -1,55 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
-    android:gravity="center_horizontal"
+    android:background="@drawable/polygan_background"
+    android:gravity="center_vertical"
     android:orientation="vertical"
     tools:context=".SplashActivity">
-<!--    <ImageView-->
-<!--        android:layout_width="70dp"-->
-<!--        android:layout_height="70dp"-->
-<!--        android:background="@drawable/dislike"-->
-<!--        android:layout_marginTop="40dp"-->
-<!--        android:layout_marginBottom="40dp"/>-->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:orientation="vertical"
-        >
-
+        android:orientation="vertical">
 
         <ImageView
-            
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:background="@drawable/logo"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="25dp"/>
+            android:layout_marginBottom="80dp"
+            android:background="@drawable/round_logo" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Thấu hiểu người khiếm thính"
-            android:textColor="@android:color/black"
+            android:text="NGÔN NGỮ KÍ HIỆU"
+            android:textColor="@android:color/white"
             android:textSize="25dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
+
         <TextView
-            android:layout_margin="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             android:gravity="center"
-            android:text="Cùng giúp đỡ những người thiếu may mắn mất đi giộng nói và thính giác"
-            android:textColor="@android:color/black"
+            android:text="Thấu hiểu người khiếm thính. Tình yêu trong đôi bàn tay của bạn"
+            android:textColor="@android:color/white"
             android:textSize="20dp" />
-        <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+
+      <ProgressBar
+          android:layout_marginTop="30dp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"/>
+
+
 
     </LinearLayout>
 

@@ -1,5 +1,7 @@
 package com.example.signlanguage.Fragment.BasicTab;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -46,28 +49,26 @@ public class BasicTabFragment extends Fragment implements BasicAdapter.OnItemCli
         });
         return rootView;
     }
-
-    private void getItemTab(){
+   void getItemTab(){
         VolleyApi volley =new VolleyApi(getContext());
 
         String urlJsonArryCategoty = getResources().getString(R.string.API_URL)+"categories/bf516b98-5bf4-4f14-b467-87f7bafca53e";
+            volley.makeObjectArrayRequest(urlJsonArryCategoty, new VolleyApi.OnTabResponse() {
+                @Override
+                public void onResponse(List<Tab> tabs) {
 
-        volley.makeObjectArrayRequest(urlJsonArryCategoty, new VolleyApi.OnTabResponse() {
-            @Override
-            public void onResponse(List<Tab> tabs) {
-                basicAdapter = new BasicAdapter(this, tabs);
-                recyclerViewTab.setAdapter(basicAdapter);
-                basicAdapter.setOnClick(BasicTabFragment.this);
+                    basicAdapter = new BasicAdapter(this, tabs);
+                    recyclerViewTab.setAdapter(basicAdapter);
+                    basicAdapter.setOnClick(BasicTabFragment.this);
 
-            }
-        });
+                }
+            });
     }
 
     @Override
     public void onClickDetailTab(int position) {
         Intent intent = new Intent(getActivity(), TabDetailActivity.class);
         intent.putExtra("subCategory_ID",basicAdapter.TabsItem.get(position).getId());
-        Log.d("tag",basicAdapter.TabsItem.get(position).getId() );
         startActivity(intent);
     }
 

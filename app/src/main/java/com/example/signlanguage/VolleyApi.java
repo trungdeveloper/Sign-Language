@@ -1,8 +1,11 @@
 package com.example.signlanguage;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.util.Log;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -28,7 +31,19 @@ public class VolleyApi {
         this.context = context;
     }
 
-
+    public AlertDialog.Builder buildDialog(Context c) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(c);
+        builder.setTitle("Không có kết nối Internet");
+        builder.setMessage("Bạn cần phải bật dữ liệu di động hoặc wifi để truy cập ứng dụng này. Nhấn OK để thoát");
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ((MainActivity)context).finish();
+                System.exit(0);
+            }
+        });
+        return builder;
+    }
     public void makeObjectArrayRequest(String urlJsonArry, final OnTabResponse listener) {
         RequestQueue requestQueue = Volley.newRequestQueue(context);
 
@@ -57,6 +72,7 @@ public class VolleyApi {
                             listener.onResponse(tabs);
                         } catch (JSONException e) {
                             e.printStackTrace();
+                            buildDialog(context);
                             Log.d("err", e.toString());
                         }
                     }
@@ -64,8 +80,9 @@ public class VolleyApi {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context, "Errr Errr không kết nối mạng" + error,
-                                Toast.LENGTH_LONG).show();
+                        buildDialog(context);
+//                        Toast.makeText(context, "Errr không kết nối mạng" + error,
+//                                Toast.LENGTH_LONG).show();
 
                     }
                 }
@@ -108,6 +125,7 @@ public class VolleyApi {
                             listener.OnSubCategoryResponse(subcategories);
                         } catch (JSONException e) {
                             e.printStackTrace();
+                            buildDialog(context);
                             Log.d("err", e.toString());
                         }
                     }
@@ -115,8 +133,9 @@ public class VolleyApi {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context, "Errr Errr không kết nối mạng" + error,
-                                Toast.LENGTH_LONG).show();
+                        buildDialog(context);
+//                        Toast.makeText(context, "Errr không kết nối mạng" + error,
+//                                Toast.LENGTH_LONG).show();
                     }
                 }
         );

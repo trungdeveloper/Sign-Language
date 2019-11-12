@@ -55,7 +55,6 @@ public class TabDetailAdapter extends RecyclerView.Adapter<TabDetailAdapter.Basi
         if (SubCategoryItem.get(position).getImage() == null|| SubCategoryItem.get(position).getImage().isEmpty()){
             holder.image.setImageResource(R.drawable.windows);
             holder.nameItem.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
-
         }else {
             Picasso.get().load(SubCategoryItem.get(position).getImage()).fit().into(holder.image);
         }

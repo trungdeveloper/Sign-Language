@@ -1,38 +1,37 @@
 package com.example.signlanguage.receiver;
-
-import android.content.BroadcastReceiver;
+import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
+import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.util.Log;
 
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.appcompat.app.AlertDialog;
 
-import static android.content.Context.CONNECTIVITY_SERVICE;
 
-public class NetworkStateChangeReceiver extends BroadcastReceiver {
-  public static final String NETWORK_AVAILABLE_ACTION = "com.ajit.singh.NetworkAvailable";
-  public static final String IS_NETWORK_AVAILABLE = "isNetworkAvailable";
-
-  @Override
-  public void onReceive(Context context, Intent intent) {
-    Intent networkStateIntent = new Intent(NETWORK_AVAILABLE_ACTION);
-    networkStateIntent.putExtra(IS_NETWORK_AVAILABLE,  isConnectedToInternet(context));
-    LocalBroadcastManager.getInstance(context).sendBroadcast(networkStateIntent);
-  }
-
-  private boolean isConnectedToInternet(Context context) {
-    try {
-      if (context != null) {
-        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-        return networkInfo != null && networkInfo.isConnected();
-      }
-      return false;
-    } catch (Exception e) {
-      Log.e(NetworkStateChangeReceiver.class.getName(), e.getMessage());
-      return false;
+public class NetworkStateChangeReceiver {
+    public static boolean isConnected(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netinfo = cm.getActiveNetworkInfo();
+        if (netinfo != null && netinfo.isConnectedOrConnecting()) {
+            android.net.NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+            android.net.NetworkInfo mobile = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+            if ((mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting()))
+                return true;
+            else return false;
+        } else
+            return false;
     }
-  }
+
+    public static AlertDialog.Builder buildDialog(final Context c, final Activity activity) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(c);
+        builder.setTitle("Không có kết nối Internet");
+        builder.setMessage("Bạn cần phải bật dữ liệu di động hoặc wifi để truy cập ứng dụng này. Nhấn OK để thoát");
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                activity.finish();
+            }
+        });
+        return builder;
+    }
 }

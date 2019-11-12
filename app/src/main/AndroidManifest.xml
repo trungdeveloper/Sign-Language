@@ -5,7 +5,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -19,15 +19,9 @@
         <activity android:name=".Screens.ResultActivity.ResultTabActivity" />
         <activity android:name=".Screens.TabDetail.TabDetailActivity" />
 
-            <activity
-                android:name=".SplashActivity"
-                tools:ignore="WrongManifestParent">
-
-            </activity>
-
-        <activity android:name=".Fragment.BasicTab.BasicTabFragment" />
-        <activity android:name=".Screens.Search.SearchableActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".SplashActivity"
+            tools:ignore="WrongManifestParent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,10 +29,17 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".receiver.NetworkStateChangeReceiver"
+        <activity android:name=".Fragment.BasicTab.BasicTabFragment" />
+        <activity android:name=".Screens.Search.SearchableActivity"></activity>
+        <activity android:name=".MainActivity">
+
+        </activity>
+
+        <receiver
+            android:name=".receiver.NetworkStateChangeReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
     </application>

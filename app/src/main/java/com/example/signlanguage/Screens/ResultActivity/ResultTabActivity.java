@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.MediaController;
@@ -17,8 +21,11 @@ import android.widget.VideoView;
 
 import com.example.signlanguage.Database.AppDatabase;
 import com.example.signlanguage.Database.Favorites;
+import com.example.signlanguage.MainActivity;
 import com.example.signlanguage.R;
 import com.example.signlanguage.Screens.Favorites.GetDataFavorivate;
+import com.example.signlanguage.Screens.Search.SearchableActivity;
+import com.example.signlanguage.receiver.NetworkStateChangeReceiver;
 
 import java.util.List;
 
@@ -44,9 +51,13 @@ public class ResultTabActivity extends AppCompatActivity {
         btnAddFavorites = findViewById(R.id.btn_add_favorite);
         progressDialog = new ProgressDialog(ResultTabActivity.this);
 
-        getDataFavorivate();
-        getItemResult();
-
+        if (!NetworkStateChangeReceiver.isConnected(ResultTabActivity.this)){
+            NetworkStateChangeReceiver.buildDialog(ResultTabActivity.this, ResultTabActivity.this).show();
+        }
+        else {
+            getDataFavorivate();
+            getItemResult();
+        }
         btnAddFavorites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -146,5 +157,24 @@ public class ResultTabActivity extends AppCompatActivity {
             }
         }.execute();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
+        menu.findItem(R.id.action_search).setVisible(false);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.btn_open_search) {
+            startActivity(new Intent(getApplicationContext(), SearchableActivity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
 }

@@ -20,7 +20,8 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="@drawable/radius_bottomleft_right" />
+        android:background="@drawable/radius_bottomleft_right"
+        />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"

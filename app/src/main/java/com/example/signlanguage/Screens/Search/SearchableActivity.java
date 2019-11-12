@@ -12,16 +12,19 @@ import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.signlanguage.MainActivity;
 import com.example.signlanguage.R;
 import com.example.signlanguage.Screens.ResultActivity.ResultTabActivity;
 import com.example.signlanguage.VolleyApi;
 import com.example.signlanguage.model.NameComparator;
 import com.example.signlanguage.model.Subcategory;
+import com.example.signlanguage.receiver.NetworkStateChangeReceiver;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
-public class SearchableActivity extends AppCompatActivity implements RecyclerAdapter.OnItemClicked{
+public class SearchableActivity extends AppCompatActivity implements RecyclerAdapter.OnItemClicked {
     RecyclerView recyclerView;
     RecyclerAdapter recyclerAdapter;
 
@@ -32,21 +35,40 @@ public class SearchableActivity extends AppCompatActivity implements RecyclerAda
         setContentView(R.layout.activity_search);
         recyclerView = findViewById(R.id.recyclerView);
 
-        VolleyApi volley =new VolleyApi(this);
-        String urlJsonArry = getResources().getString(R.string.API_URL)+"posts?limit=1000";
-        volley.getPosts(urlJsonArry,"sources",new VolleyApi.OnSubCategoryResponse() {
+        if (!NetworkStateChangeReceiver.isConnected(SearchableActivity.this)) {
+            NetworkStateChangeReceiver.buildDialog(SearchableActivity.this, SearchableActivity.this).show();
+        } else {
+            getData();
+        }
+
+    }
+
+    private void getData() {
+        VolleyApi volley = new VolleyApi(this);
+        String urlJsonArry = getResources().getString(R.string.API_URL) + "posts?limit=1000";
+        volley.getPosts(urlJsonArry, "sources", new VolleyApi.OnSubCategoryResponse() {
             @Override
             public void OnSubCategoryResponse(List<Subcategory> subcategories) {
-                Collections.sort(subcategories, new NameComparator());
+                Collections.sort(subcategories, new Comparator<Subcategory>() {
+                    public int compare(Subcategory o1, Subcategory o2) {
+                        return extractInt(o1.getKeyword()) - extractInt(o2.getKeyword());
+                    }
+
+                    int extractInt(String s) {
+                        String num = s.replaceAll("\\D", "");
+                        // return 0 if no digits found
+                        return num.isEmpty() ? 0 : Integer.parseInt(num);
+                    }
+                });
+
+
                 recyclerAdapter = new RecyclerAdapter(subcategories);
                 recyclerView.setLayoutManager(new LinearLayoutManager(SearchableActivity.this));
                 recyclerView.setAdapter(recyclerAdapter);
                 recyclerAdapter.setOnClick(SearchableActivity.this);
             }
         });
-
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -86,10 +108,12 @@ public class SearchableActivity extends AppCompatActivity implements RecyclerAda
     @Override
     public void onClickDetailTab(int position) {
         Intent intent = new Intent(this, ResultTabActivity.class);
-        intent.putExtra("id",recyclerAdapter.moviesList.get(position).getId());
-        intent.putExtra("keyword",recyclerAdapter.moviesList.get(position).getKeyword());
-        intent.putExtra("image",recyclerAdapter.moviesList.get(position).getImage());
-        intent.putExtra("video",recyclerAdapter.moviesList.get(position).getVideo());
+        intent.putExtra("id", recyclerAdapter.moviesList.get(position).getId());
+        intent.putExtra("keyword", recyclerAdapter.moviesList.get(position).getKeyword());
+        intent.putExtra("image", recyclerAdapter.moviesList.get(position).getImage());
+        intent.putExtra("video", recyclerAdapter.moviesList.get(position).getVideo());
         startActivity(intent);
     }
+
+
 }

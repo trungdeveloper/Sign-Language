@@ -18,6 +18,7 @@ export default class Header extends Component {
                             <li><a href="/">CATEGORY</a></li>
                             <li><a href="/subcategories">SUBCATEGORY</a></li>
                             <li><a href="/posts">POST</a></li>
+                            <li><a href="/tbuposts">TO BE UPDATE POST</a></li>
                         </ul>
                     </div>
                 </div>

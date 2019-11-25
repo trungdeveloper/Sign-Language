@@ -91,7 +91,6 @@ export default class PostItem extends Component {
                 image,
                 video
             }
-            console.log(data);
             try {
                 await callApi(`${ENDPOINTS.POST}/${id}`, "PUT", data)
                 ToastSuccess('Cập nhật thành công!')

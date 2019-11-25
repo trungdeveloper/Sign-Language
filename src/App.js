@@ -7,6 +7,7 @@ import Post from './containers/pages/Post/Post';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import Header from './containers/components/Header/Header';
+import TBUPost from './containers/pages/ToBeFixPost/TBUPost';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Switch>
           <Route exact path="/" name="Category Page" component={Category} />
           <Route exact path="/posts" name="Post Page" component={Post} />
+          <Route exact path="/tbuposts" name="To Be Update Post" component={TBUPost} />
           <Route exact path="/subcategories" name="SubCategory Page" component={SubCategory} />
         </Switch>
       </Router>
